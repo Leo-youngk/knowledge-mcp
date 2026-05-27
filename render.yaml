@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: knowledge-mcp
+    runtime: node
+    region: singapore
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node dist/http-server.js
+    envVars:
+      - key: KNOWLEDGE_MODE
+        value: remote
+      - key: NODE_ENV
+        value: production
+      - key: KNOWLEDGE_SUPABASE_URL
+        sync: false
+      - key: KNOWLEDGE_SUPABASE_KEY
+        sync: false
