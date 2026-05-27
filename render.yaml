@@ -4,7 +4,7 @@ services:
     runtime: node
     region: singapore
     plan: free
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --omit=dev
     startCommand: node dist/http-server.js
     envVars:
       - key: KNOWLEDGE_MODE
